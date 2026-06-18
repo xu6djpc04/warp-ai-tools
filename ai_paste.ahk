@@ -1,7 +1,7 @@
 #Requires AutoHotkey v2.0
 #SingleInstance Force
 
-#HotIf WinActive("ahk_exe warp.exe")
+#HotIf WinActive("ahk_exe warp.exe") && (GetKeyState("LCtrl","P") || GetKeyState("RCtrl","P"))
 ^v:: {
     ; Check for CF_BITMAP (2), CF_DIB (8), and CF_DIBV5 (17)
     if (DllCall("IsClipboardFormatAvailable", "uint", 2) || DllCall("IsClipboardFormatAvailable", "uint", 8) || DllCall("IsClipboardFormatAvailable", "uint", 17)) {
